@@ -1,0 +1,134 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix gpc: <https://w3id.org/gerps/ontology/codelist/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix provo: <https://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+<https://w3id.org/gerps/ontology/codelist/> rdf:type owl:Ontology ;
+                                            dct:abstract "Ontology mapping the XöV-Standard Codelists."@en ,
+                                                         "Ontologie zur Abbildung von XöV-Codelisten."@de ;
+                                            dct:contributor "Heinz Conti Zacherl",
+                                                            "Maximilian Enderling" ;
+                                            dct:creator "openDVA" ;
+                                            dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+                                            dct:title "GerPS-Codeliste"@de ,
+                                                      "GerPS-Codelist"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  https://w3id.org/gerps/ontology/codelist/ColumnLongName
+gpc:ColumnLongName rdf:type owl:AnnotationProperty ;
+                   rdfs:label "Column long name"@en ,
+                              "Langer Spaltenname"@de ;
+                   rdfs:comment "The long name of a codelist column."@en ,
+                                "Der Langname einer Codelisten-Spalte."@de ;
+                   rdfs:range xsd:string ;
+                   rdfs:domain gpc:Column .
+
+
+###  https://w3id.org/gerps/ontology/codelist/ColumnShortName
+gpc:ColumnShortName rdf:type owl:AnnotationProperty ;
+                    rdfs:label "Column short name"@en ,
+                               "Kurzer Spaltenname"@de ;
+                    rdfs:comment "The short name of a codelist column."@en ,
+                                 "Der Kurzname einer Codelisten-Spalte."@de ;
+                    rdfs:range xsd:string ;
+                    rdfs:domain gpc:Column .
+
+
+###  https://w3id.org/gerps/ontology/codelist/FetchedAt
+gpc:FetchedAt rdf:type owl:AnnotationProperty ;
+              rdfs:label "Fetched at"@en ,
+                         "Abgerufen am"@de ;
+              rdfs:comment "The date and time when the codelist was fetched."@en ,
+                           "Datum und Uhrzeit, zu der die Codeliste abgerufen wurde."@de ;
+              rdfs:range xsd:dateTime ;
+              rdfs:domain gpc:Codelist .
+
+
+###  https://w3id.org/gerps/ontology/codelist/HandbookVersion
+gpc:HandbookVersion rdf:type owl:AnnotationProperty ;
+                    rdfs:label "Handbook version"@en ,
+                               "Handbuchversion"@de ;
+                    rdfs:comment "The version of the handbook associated with the codelist."@en ,
+                                 "Die Versionsnummer des Handbuchs, das der Codeliste zugeordnet ist."@de ;
+                    rdfs:range xsd:string ;
+                    rdfs:domain gpc:Codelist .
+
+
+###  https://w3id.org/gerps/ontology/codelist/KeyColumn
+gpc:KeyColumn rdf:type owl:AnnotationProperty ;
+              rdfs:label "is key column"@en ,
+                         "ist Schlüsselspalte"@de ;
+              rdfs:comment "Indicates whether a column is the key column of a codelist."@en ,
+                           "Gibt an, ob eine Spalte die Schlüsselspalte einer Codeliste ist."@de ;
+              rdfs:range xsd:boolean ;
+              rdfs:domain gpc:Column .
+
+
+###  https://w3id.org/gerps/ontology/codelist/SourceUrl
+gpc:SourceUrl rdf:type owl:AnnotationProperty ;
+              rdfs:label "has source URL"@en ,
+                         "hat Quell-URL"@de ;
+              rdfs:comment "The URL of the source from which the codelist was retrieved."@en ,
+                           "Die URL der Quelle, aus der die Codeliste bezogen wurde."@de ;
+              rdfs:range xsd:string ;
+              rdfs:domain gpc:Codelist .
+
+
+###  https://w3id.org/gerps/ontology/codelist/Use
+gpc:Use rdf:type owl:AnnotationProperty ;
+        rdfs:label "has use"@en ,
+                   "Verwendung"@de ;
+        rdfs:comment "Indicates whether a column is optional or required."@en ,
+                     "Gibt an, ob eine Spalte optional oder verpflichtend ist."@de ;
+        rdfs:range xsd:string ;
+        rdfs:domain gpc:Column .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/gerps/ontology/codelist/CodelistProperty
+gpc:CodelistProperty rdf:type owl:DatatypeProperty ;
+                     rdfs:domain gpc:Codelist ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "Codelist property"@en ,
+                                "Codelisten-Eigenschaft"@de ;
+                     rdfs:comment "Base property for all column-based values in codelists."@en ,
+                                  "Basiseigenschaft für alle spaltenbasierten Werte in Codelisten."@de .
+
+
+###  https://w3id.org/gerps/ontology/codelist/Column
+gpc:Column rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf gpc:CodelistProperty ;
+           rdfs:domain gpc:Codelist ;
+           rdfs:range xsd:string ;
+           rdfs:label "Column"@en ,
+                      "Spalte"@de ;
+           rdfs:comment "Specialised codelist property for codelist columns."@en ,
+                        "Spezialisierte Codelisten-Eigenschaft für Codelisten-Spalten."@de .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/gerps/ontology/codelist/Codelist
+gpc:Codelist rdf:type owl:Class ;
+             rdfs:label "Codelist"@en ,
+                        "Codeliste"@de ;
+             rdfs:comment "A structured codelist as defined by the XöV standard."@en ,
+                          "Eine strukturierte Codeliste gemäß XöV-Standard."@de .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
