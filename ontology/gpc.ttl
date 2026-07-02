@@ -25,7 +25,7 @@
 #################################################################
 
 ###  https://w3id.org/gerps/ontology/codelist/ColumnLongName
-gpc:ColumnLongName rdf:type owl:AnnotationProperty ;
+gpc:ColumnLongName rdf:type owl:DatatypeProperty ;
                    rdfs:label "Column long name"@en ,
                               "Langer Spaltenname"@de ;
                    rdfs:comment "The long name of a codelist column."@en ,
@@ -35,7 +35,7 @@ gpc:ColumnLongName rdf:type owl:AnnotationProperty ;
 
 
 ###  https://w3id.org/gerps/ontology/codelist/ColumnShortName
-gpc:ColumnShortName rdf:type owl:AnnotationProperty ;
+gpc:ColumnShortName rdf:type owl:DatatypeProperty ;
                     rdfs:label "Column short name"@en ,
                                "Kurzer Spaltenname"@de ;
                     rdfs:comment "The short name of a codelist column."@en ,
@@ -45,7 +45,7 @@ gpc:ColumnShortName rdf:type owl:AnnotationProperty ;
 
 
 ###  https://w3id.org/gerps/ontology/codelist/FetchedAt
-gpc:FetchedAt rdf:type owl:AnnotationProperty ;
+gpc:FetchedAt rdf:type owl:DatatypeProperty ;
               rdfs:label "Fetched at"@en ,
                          "Abgerufen am"@de ;
               rdfs:comment "The date and time when the codelist was fetched."@en ,
@@ -55,7 +55,7 @@ gpc:FetchedAt rdf:type owl:AnnotationProperty ;
 
 
 ###  https://w3id.org/gerps/ontology/codelist/HandbookVersion
-gpc:HandbookVersion rdf:type owl:AnnotationProperty ;
+gpc:HandbookVersion rdf:type owl:DatatypeProperty ;
                     rdfs:label "Handbook version"@en ,
                                "Handbuchversion"@de ;
                     rdfs:comment "The version of the handbook associated with the codelist."@en ,
@@ -65,7 +65,7 @@ gpc:HandbookVersion rdf:type owl:AnnotationProperty ;
 
 
 ###  https://w3id.org/gerps/ontology/codelist/KeyColumn
-gpc:KeyColumn rdf:type owl:AnnotationProperty ;
+gpc:KeyColumn rdf:type owl:DatatypeProperty ;
               rdfs:label "is key column"@en ,
                          "ist Schlüsselspalte"@de ;
               rdfs:comment "Indicates whether a column is the key column of a codelist."@en ,
@@ -75,7 +75,7 @@ gpc:KeyColumn rdf:type owl:AnnotationProperty ;
 
 
 ###  https://w3id.org/gerps/ontology/codelist/SourceUrl
-gpc:SourceUrl rdf:type owl:AnnotationProperty ;
+gpc:SourceUrl rdf:type owl:DatatypeProperty ;
               rdfs:label "has source URL"@en ,
                          "hat Quell-URL"@de ;
               rdfs:comment "The URL of the source from which the codelist was retrieved."@en ,
@@ -85,7 +85,7 @@ gpc:SourceUrl rdf:type owl:AnnotationProperty ;
 
 
 ###  https://w3id.org/gerps/ontology/codelist/Use
-gpc:Use rdf:type owl:AnnotationProperty ;
+gpc:Use rdf:type owl:DatatypeProperty ;
         rdfs:label "has use"@en ,
                    "Verwendung"@de ;
         rdfs:comment "Indicates whether a column is optional or required."@en ,
